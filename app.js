@@ -353,6 +353,49 @@ console.log(catSentence("cat", "white"));
 
 // ----------------------------------------------------------------------------
 
+// Review: The ternary operator
+// The ternary operator gives us a way to handle conditional logic in a single line of code. Ternaries can be viewed as a more concise version of an if...else statement. It can also simplify the process of assigning a value to a variable based on a condition.
+
+// A ternary consists of three parts:
+
+// Condition: A boolean expression evaluated for truthiness, placed before the ?.
+// True Expression: The value assigned to the variable if the condition is true, located immediately after the ?.
+// False Expression: The value assigned to the variable if the condition is false, following the :.
+// Consider the following example using an if...else statement:
+
+// const age = 22;
+// let access;
+
+// if (age > 21) {
+//   access = 'Yes';
+// } else {
+//   access = 'No';
+// }
+
+// console.log(access); // 'Yes'
+
+// This logic can be streamlined using a ternary:
+
+// const age = 22;
+// let access = age > 21 ? 'Yes' : 'No';
+
+// console.log(access); // 'Yes'
+
+// 💡 The ternary operator is a powerful tool for simplifying conditional expressions, making it ideal for straightforward assignments based on a single condition.
+
+// Exercise 9: Ternary operator
+// Convert the following `if...else` statement in to a ternary:
+
+let pizza = "tasty";
+
+// if (pizza === 'tasty') {
+//   console.log('yum');
+// } else {
+//   console.log('yuck');
+// }
+
+pizza === "tasty" ? console.log("yum") : console.log("yuck");
+
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
