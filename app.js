@@ -24,7 +24,7 @@ const multBy2 = nums.map((currentNum) => {
 });
 console.log(multBy2);
 
-// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 // Review: Array destructuring
 // Array destructuring in JavaScript is a way of unpacking the elements of an array. With array destructuring, we can extract elements from an array and store them in variables with a single line of code.
@@ -55,7 +55,7 @@ const [firstPizzaTopping, secondPizzaTopping] = pizzaToppings;
 console.log(firstPizzaTopping);
 console.log(secondPizzaTopping);
 
-// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 // Review: Object destructuring
 // Destructuring can also be applied to objects. With object destructuring, we can extract properties from an object. Instead of accessing properties through dot notation or bracket notation, the values of specific properties in an object can be assigned to variables.
@@ -91,7 +91,7 @@ const { make, model } = car;
 console.log(make);
 console.log(model);
 
-// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 // Review: Applying the spread operator on arrays
 // The spread operator (...) gives us a way to duplicate or combine arrays. Instead of manually copying elements from one array to another using loops, the spread operator allows us to directly copy the elements of one array into another.
@@ -131,7 +131,7 @@ console.log(model);
 const controversialPizzaToppings = [...pizzaToppings];
 console.log(controversialPizzaToppings);
 
-// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 // Review: Applying the spread operator on objects
 // The spread operator can also be applied to objects:
@@ -195,7 +195,7 @@ myCar.model = "q7";
 console.log("Original: ", car);
 console.log("Cloned: ", myCar);
 
-// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 
 // Review: Dynamic keys in objects
 // Through bracket notation, variables and expressions can be used as dynamic keys in an object. Dynamic keys can be used to create, access, and modify properties in an object. Dynamic keys enhance our ability to access data. This approach is particularly useful in scenarios where key names are not known ahead of time or when they need to be computed on the fly. It also allows for more concise and readable code, avoiding the need for additional steps when assigning properties to objects.
@@ -236,24 +236,129 @@ const propertyName = "username";
 userProfile[propertyName] = "Johnny";
 console.log(userProfile);
 
-// ----------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 
-// ----------------------------------------------------------------------------------
+// Review: import and export
+// In JavaScript, the import and export syntax allows us to share code between different files. This is a more modern approach compared to the require and module.exports syntax used in CommonJS.
 
-// ----------------------------------------------------------------------------------
+// With export, you can make functions, objects, or primitives available for use in other files.
 
-// ----------------------------------------------------------------------------------
+// There are two main types of exports:
 
-// ----------------------------------------------------------------------------------
+// Named exports: For exporting multiple items from a file:
+// export const myNumber = 123;
+// export const myString = 'Hello';
+// Copy
+// Default exports: For exporting a single item from a file:
+// export default function superCoolFunction() {
+//   /* ... */
+// }
 
-// ----------------------------------------------------------------------------------
+// 🏆 It’s possible to mix default and named exports in a single module, but it’s a best practice to stick to one style for consistency and clarity.
 
-// ----------------------------------------------------------------------------------
+// Using import, you can bring those exported items into another file.
 
-// ----------------------------------------------------------------------------------
+// Importing named exports:
+// import { myNumber, myString } from './myData.js';
 
-// ----------------------------------------------------------------------------------
+// Importing a default export:
+// import superCoolFunction from './superCoolFunction.js';
 
-// ----------------------------------------------------------------------------------
+// You can also import all named exports as a single object, which is useful when dealing with modules that export several items:
 
-// ----------------------------------------------------------------------------------
+// import * as MyData from './myData.js';
+// console.log(MyData.myNumber);
+// console.log(MyData.myString);
+
+// This allows for more organized code by separating concerns into modules.
+
+// Exercise 7: Import and Export
+// Follow the steps below for some practice with import and export. Update the values for default, age, and job accordingly:
+
+// Initialize a node project:
+// npm init -y
+
+// Add the following property to package.json:
+// "type":"module",
+
+// Create two files: exportingFile.js and importingFile.js:
+// touch exportingFile.js
+// touch importingFile.js
+
+// In exportingFile.js add the following:
+// export default 'Matt';
+
+// In importingFile.js add the following:
+// import name from './exportingFile.js';
+// console.log(name);
+
+// Run importingFile.js like so:
+// node importingFile.js
+
+// To export additional values, update exportingFile.js like so:
+// export default 'Matt';
+// export const age = 43;
+// export const job = 'programmer';
+
+// These additions can be imported by updating importingFile.js like so:
+
+// import name, { age, job } from './exportingFile.js';
+// console.log(name, age, job);
+
+// ----------------------------------------------------------------------------
+
+// Review: Default parameters
+// Default parameters are just that - default values for parameters. These defaults are applied when no value is passed for those parameters during a function call.
+
+// Take this example:
+
+// function addThreeNumbers(numA, numB, numC) {
+//   return numA + numB + numC;
+// }
+
+// addThreeNumbers(2);
+
+// This will return NaN, because the value of numB and numC are both undefined. Let’s apply some defaults to the numB and numC parameters:
+
+// function addThreeNumbers(numA, numB = 2, numC = 1) {
+//   return numA + numB + numC;
+// }
+
+// addThreeNumbers(2);
+
+// Now this function will return the number 5. What if we also give a default to numA?
+
+// function addThreeNumbers(numA = 1, numB = 2, numC = 1) {
+//   return numA + numB + numC;
+// }
+
+// addThreeNumbers(2);
+
+// This function is still going to return the number 5. The default value of 1 on numA will be overridden by the passed in value of 2.
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
