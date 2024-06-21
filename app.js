@@ -398,6 +398,102 @@ pizza === "tasty" ? console.log("yum") : console.log("yuck");
 
 // ----------------------------------------------------------------------------
 
+// Review: Boolean gates
+// Logical operators such as && (AND) and || (OR) play an interesting role when used outside of if...else statements. In this context, they can be used to evaluate and return values directly, based on the truthiness or falsiness of the values involved.
+
+// The && operator
+// The && operator evaluates expressions from left to right and returns the first falsy value it encounters. If all values are truthy, it returns the last value.
+
+// Let’s take a look at a few examples of the && operator at work:
+
+// When the first expression (false) being evaluated is falsy, and result will be assigned that value (false).
+
+// const result = false && 'foo';
+// console.log(result); // Output: false
+
+// When the first value is truthy ('hello') and the second value is falsy (''), the result is assigned the empty string (''), as it is the first falsy value encountered.
+
+// const result = 'hello' && '';
+// console.log(result); // Output: ''
+
+// When both values are truthy, the result is the value of the last expression ('bar').
+
+// const result = 'foo' && 'bar';
+// console.log(result); // Output: 'bar'
+
+// 💡 Remember, in JavaScript, falsy values include '' (empty strings), 0, null, undefined, NaN, and false. Everything else is considered truthy.
+
+// The || operator
+// The || operator evaluates expressions from left to right and returns the first truthy value it encounters. If all values are falsy, it returns the last value.
+
+// Let’s take a look at a few examples of the || operator at work:
+
+// When the first expression ('') is falsy, result is assigned 'foo' as it’s the first truthy value.
+
+// const result = '' || 'foo';
+// console.log(result); // Output: 'foo'
+
+// If the first value (2) is truthy, the evaluation stops, and result is assigned the first value (2).
+
+// const result = 2 || 0;
+// console.log(result); // Output: 2
+
+// When all values being evaluated are falsy ('' and 0), result is assigned the last value (0), as no truthy value is found.
+
+// const result = '' || 0;
+// console.log(result); // Output: 0
+
+// 💡 The || operator can be helpful for setting fallback or default values.
+
+// Can you guess what the values of the variables will be:
+
+const result1 = 'bar' && 'foo'; // returns first falsy or last expression
+const result2 = false || 243; // returns first truthy or last expression
+const result3 = 42 && false; // returns first falsy or last expression
+const result4 = 'myVar' || 3000; // returns first truthy or last expression
+
+console.log('result1:', result1); // foo
+console.log('result2:', result2); // 243
+console.log('result3:', result3); // false
+console.log('result4:', result4); // myVar
+
+// Exercise 10: Boolean gates
+// In modern JavaScript, a common pattern is to assign a default value to variables if no specific value is provided. This technique is especially useful in settings where configurations might be optional. For example, users might not set their language or theme preferences on a website, and you’d want to fall back to some default settings.
+
+// Now that you’ve seen how to assign default values using the logical OR operator, let’s reinforce this concept with a direct application.
+
+// Let’s assume we have a variable called localLangConfig that might contain a language code (like ‘es’ for Spanish, ‘fr’ for French) or might be null if no language is selected
+// Your task is to create a variable LANG that should use the value from localLangConfig if it’s not null. If localLangConfig is null, default LANG to ‘en’ (English).
+// 1. SET LANGUAGE
+
+// Construct a single line of code that assigns a default value using the logical OR operator. This line should match the logic of the following statement: 
+
+// "LANG is equal to localLangConfig or the default value of English."
+
+const localLangConfig = null;  // Change to 'es', 'fr', etc., or keep it null
+
+// a. Create a variable called LANG
+// b. Assign LANG the value of localLangConfig or 'en' as a default
+
+const LANG = localLangConfig || 'en';
+
+// Log the result
+console.log('Language setting:', LANG);
+
+// Now, let’s try this same pattern for setting a users website theme.
+
+// 2. SET WEBSITE THEME
+
+const userSavedTheme = 'dark'; // Change to 'dark', 'contrast', etc., or keep it null
+
+// a. Create a variable called USER_THEME
+// b. Assign USER_THEME the value of userSavedTheme or 'light' as a default
+
+const USER_THEME = userSavedTheme || 'light';
+
+// Log the result
+console.log('User theme setting:', USER_THEME);
+
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
