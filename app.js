@@ -447,15 +447,15 @@ pizza === "tasty" ? console.log("yum") : console.log("yuck");
 
 // Can you guess what the values of the variables will be:
 
-const result1 = 'bar' && 'foo'; // returns first falsy or last expression
-const result2 = false || 243; // returns first truthy or last expression
-const result3 = 42 && false; // returns first falsy or last expression
-const result4 = 'myVar' || 3000; // returns first truthy or last expression
+// const result1 = 'bar' && 'foo'; // returns first falsy or last expression
+// const result2 = false || 243; // returns first truthy or last expression
+// const result3 = 42 && false; // returns first falsy or last expression
+// const result4 = 'myVar' || 3000; // returns first truthy or last expression
 
-console.log('result1:', result1); // foo
-console.log('result2:', result2); // 243
-console.log('result3:', result3); // false
-console.log('result4:', result4); // myVar
+// console.log('result1:', result1); // foo
+// console.log('result2:', result2); // 243
+// console.log('result3:', result3); // false
+// console.log('result4:', result4); // myVar
 
 // Exercise 10: Boolean gates
 // In modern JavaScript, a common pattern is to assign a default value to variables if no specific value is provided. This technique is especially useful in settings where configurations might be optional. For example, users might not set their language or theme preferences on a website, and you’d want to fall back to some default settings.
@@ -496,15 +496,38 @@ console.log('User theme setting:', USER_THEME);
 
 // ----------------------------------------------------------------------------
 
-// ----------------------------------------------------------------------------
+// Review: Optional chaining
+// Optional chaining is a way to safely access deeply nested properties in an object. This approach can help us avoid the errors that occur when attempting to access undefined or null properties.
 
-// ----------------------------------------------------------------------------
+// Consider a scenario where we attempt to access a property that doesn’t exist, which normally results in an error:
 
-// ----------------------------------------------------------------------------
+// const adventurer = {
+//   name: 'Alice',
+// };
 
-// ----------------------------------------------------------------------------
+// console.log(adventurer.dog.name); // TypeError: Cannot read properties of undefined (reading 'name')
 
-// ----------------------------------------------------------------------------
+// In this application, it’s probable that the dog property might be added in later. This is where some optional chaining might prove useful.
 
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------------
+// Using console.log(adventurer.dog?.name); will allow our code to run without an error:
+
+// const adventurer = {
+//   name: 'Alice',
+// };
+
+// let dog = adventurer.dog?.name;
+
+// console.log(dog); // undefined
+
+// Now, instead of the non existent property causing an error, our code logs a value of undefined.
+
+// Exercise 11: Optional chaining
+// Now check for `cat.age` on `adventurer`. See how it errors out? Use optional chaining in a console.log that it returns undefined instead.
+
+const adventurer = {
+  name: 'Alice',
+};
+
+let cat = adventurer.cat?.age;
+
+console.log(cat);
